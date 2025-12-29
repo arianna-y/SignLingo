@@ -1,4 +1,4 @@
-# 🛠️ SignLingo Development Log
+# SignLingo Development Log
 
 ## Phase 1: The Sensor
 **Goal:** Capture consistent human gesture data.
