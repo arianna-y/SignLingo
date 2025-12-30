@@ -3,6 +3,7 @@ import numpy as np
 import mediapipe as mp
 import torch
 import random
+import streamlit as st
 from model import SignLSTM
 
 # Setup 
@@ -43,7 +44,13 @@ def normalize_sequence(sequence_list):
     return seq_norm.reshape(30, 63)
 
 # Main loop
-cap = cv2.VideoCapture(0)
+# cap = cv2.VideoCapture(0)
+use_webcam = st.checkbox("Enable Webcam")
+
+if use_webcam:
+    cap = cv2.VideoCapture(0)
+else:
+    st.info("Webcam is disabled. Please enable it to use the sign language learning feature.")
 
 cooldown = 0
 feedback_text = ""
